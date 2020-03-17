@@ -1,0 +1,28 @@
+<%= render 'navbar' %>
+
+<div class="page-container">
+  <div class="mb-16">
+    <h1 class="text-xl">Users</h1>
+    <div id="users">
+      <% @users.each do |user| %>
+        <article class="user">
+          <div class="user__avatar">
+            <%= image_tag user.avatar_url, class: 'avatar' %>
+          </div>
+          <div class="user__info">
+            <div class="user__name">
+              <%= user.first_name %>
+            </div>
+            <div class="user__chat-icon">
+              <% if user_signed_in?  %>
+                <%= link_to 'Send message', chats_path(sender_id: current_user.id, recipient_id: user.id), method: :post %>
+              <% else %>
+                <%= link_to 'Send message', new_user_session_path %>
+              <% end %>
+            </div>
+          </div>
+        </article>
+      <% end %>
+    </div>
+  </div>
+</div>

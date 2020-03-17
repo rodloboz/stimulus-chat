@@ -1,0 +1,41 @@
+#users {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 500px;
+}
+
+.user {
+  border-radius: 5px;
+  border-width: 1px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  padding: 20px;
+  position: relative;
+
+  @apply bg-white border-gray-400 drop-shadow;
+
+  &__avatar {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  &__name {
+    font-weight: bold;
+  }
+
+  &__chat-icon {
+    font-size: 1rem;
+    font-weight: lighter;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+    &:hover {
+      @apply text-crimson-100;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+<div class="chat-sidebar">
+  <div class="chat-sidebar__search">Search by name</div>
+  <ul class="chat-sidebar__list">
+    <% @chats.each do |chat| %>
+      <%= link_to chat_path(chat) do %>
+        <li class="message <%= 'message--selected' if chat == @chat %>">
+          <div class="message__avatar">
+            <%= image_tag chat.other_user(current_user).avatar_url, class: 'avatar' %>
+          </div>
+          <div class="message__bubble">
+            <div class="message__author"><%= chat.other_user(current_user).first_name %></div>
+            <div class="message__time">5 min ago</div>
+            <div class="message__body">
+              <%= truncate(chat.last_message&.body, length: 50, omission: '...') %>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

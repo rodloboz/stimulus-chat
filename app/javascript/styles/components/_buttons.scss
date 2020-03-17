@@ -1,0 +1,12 @@
+.btn {
+  @apply font-medium py-1 px-2 rounded text-sm;
+}
+.btn-red {
+  @apply bg-crimson-100 text-white;
+}
+.btn-white {
+  @apply text-crimson-100
+}
+.btn-white:focus {
+  @apply text-crimson-200
+}

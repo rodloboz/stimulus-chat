@@ -1,0 +1,20 @@
+<div class="chat-container">
+  <%= render 'sidebar' %>
+  <div class="chat-window">
+    <%= render 'header' %>
+    <div class="chat-window__messages">
+      <%= render @messages %>
+    </div>
+    <div class="chat-window__form">
+      <%= form_for [@chat, @message] do |f| %>
+        <div class="message-form">
+          <%= f.text_field :body, placeholder: "Type message", autofocus: true, class: "message-form__input" %>
+          <%#= f.submit "Send", class: "message-form__submit" %>
+          <%= button_tag(class: 'message-form__submit') do %>
+            <%= icon('far', 'paper-plane') %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
