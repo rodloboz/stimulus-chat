@@ -5,6 +5,12 @@ class Message < ApplicationRecord
   validates_presence_of :body, :chat_id, :user_id
 
   def message_time
-    created_at.strftime("%d %b, %Y")
+    if created_at >= 1.minute.ago
+      'now'
+    elsif created_at >= Time.zone.now.beginning_of_day
+      "#{ActionController::Base.helpers.time_ago_in_words(created_at)} ago"
+    else
+      created_at.strftime("%d %b, %Y")
+    end
   end
 end

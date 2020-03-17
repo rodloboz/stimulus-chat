@@ -6,7 +6,7 @@
     <div class="message__author">
       <%= message.user == current_user ? 'Me' :  message.user.first_name %>
     </div>
-    <div class="message__time">5 min ago</div>
+    <div class="message__time"><%= message.message_time %></div>
     <div class="message__body">
       <% message.body.lines.each do |line| %>
         <p><%= line %></p>
