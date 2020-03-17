@@ -52,11 +52,25 @@
     @apply border-gray-400;
   }
 
+  &__menu {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2rem;
+    font-weight: lighter;
+
+    @apply text-gray-700;
+
+    div {
+      margin-right: 20px;
+    }
+  }
+
   &__info {
     align-items: center;
     display: flex;
     flex-direction: row;
     flex-grow: 1;
+    font-weight: bold;
 
     img {
       margin-right: 10px;

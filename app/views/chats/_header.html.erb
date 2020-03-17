@@ -3,5 +3,8 @@
     <%= image_tag @other_user.avatar_url, class: 'avatar' %>
     <div><%= @other_user.first_name %></div>
   </div>
-  <div class="chat-window__search">Search</div>
+  <div class="chat-window__menu">
+    <div><%= icon('fas', 'search') %></div>
+    <div><%= icon('fas', 'paperclip') %></div>
+  </div>
 </div>

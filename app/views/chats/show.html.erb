@@ -2,8 +2,12 @@
   <%= render 'sidebar' %>
   <div class="chat-window">
     <%= render 'header' %>
-    <div class="chat-window__messages">
-      <%= render @messages %>
+    <div class="chat-window__messages"
+          data-controller="chat">
+      <% @messages.group_by(&:day).each do |day, messages| %>
+        <%= render 'divider', day: day %>
+        <%= render messages %>
+      <% end %>
     </div>
     <div class="chat-window__form">
       <%= form_for [@chat, @message] do |f| %>

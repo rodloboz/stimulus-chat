@@ -1,0 +1,38 @@
+.divider {
+  margin: 70px auto 0;
+  text-align: center;
+  width: 100%;
+
+  div {
+    text-align: center;
+    display: block;
+    overflow: hidden;
+
+    span {
+      position: relative;
+      display: inline-block;
+      font-size: 0.8rem;
+      padding: 5px 20px;
+
+      @apply bg-white border-gray-400 border text-gray-700;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        height: 1px;
+        width: 99999px;
+
+        @apply bg-gray-400;
+      }
+
+      &::before {
+        left: 100%;
+      }
+      &::after {
+        right: 100%;
+      }
+    }
+}
+}

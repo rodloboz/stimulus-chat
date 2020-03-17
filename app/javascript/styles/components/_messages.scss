@@ -32,6 +32,7 @@
     flex-direction: column;
     max-width: 70%;
     min-width: 150px;
+    font-size: 1rem;
 
     &--fill {
       border-radius: 25px 25px 25px 5px;
@@ -49,6 +50,12 @@
 
       @apply border-gray-400 drop-shadow;
     }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   &__time {

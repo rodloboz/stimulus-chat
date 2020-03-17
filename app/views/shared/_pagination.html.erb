@@ -1,0 +1,6 @@
+<% if collection.next_page %>
+  <div data-target="infinite-scroll.loader" style="display: none">
+    <%= spinner %>
+  </div>
+  <%= link_to_next_page(collection) %>
+<% end %>
